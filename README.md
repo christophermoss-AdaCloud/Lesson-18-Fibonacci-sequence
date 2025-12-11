@@ -1,6 +1,6 @@
 # Lesson 18: Fibonacci Sequence
 
-Welcome to Lesson 18 of the FE Foundation Course - Unit 14: Software Development!
+Welcome to Lesson 18 of the FE Foundation Course - Unit 12: Software Development!
 
 ## 📚 Overview
 
