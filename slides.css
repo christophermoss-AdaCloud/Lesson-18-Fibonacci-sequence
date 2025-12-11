@@ -1,0 +1,408 @@
+/* Slides Stylesheet */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #333;
+    overflow: hidden;
+}
+
+.presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-content {
+    flex: 1;
+    padding: 3rem 5rem;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.slide-content h1 {
+    color: #667eea;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.slide-content h2 {
+    color: #764ba2;
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.slide-content h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.slide-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.slide-content ul,
+.slide-content ol {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-left: 2rem;
+}
+
+.slide-content li {
+    margin-bottom: 0.8rem;
+}
+
+.slide-content code {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+}
+
+/* Content Boxes */
+.content-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+    margin: 1.5rem 0;
+}
+
+.sequence-display {
+    background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2rem 0;
+    border: 3px solid #667eea;
+}
+
+.big-sequence {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #764ba2;
+    font-family: 'Courier New', monospace;
+}
+
+.formula-box {
+    background: #fff9e6;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1.5rem 0;
+    border: 3px solid #ffc107;
+}
+
+.formula {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f57c00;
+    font-family: 'Courier New', monospace;
+}
+
+.example-box {
+    background: #e3f2fd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border-left: 5px solid #2196f3;
+}
+
+.code-output {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1976d2;
+    font-family: 'Courier New', monospace;
+    margin-top: 1rem;
+}
+
+/* Variables Grid */
+.variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.var-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.var-card h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.var-card .small {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.var-card p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.important-box {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #ffc107;
+    margin: 1.5rem 0;
+}
+
+/* Code Examples */
+.code-example {
+    background: #2d2d2d;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.code-example pre {
+    margin: 0;
+}
+
+.code-example code {
+    background: transparent;
+    color: #f8f8f2;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    display: block;
+}
+
+.explanation-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #764ba2;
+    margin: 1.5rem 0;
+}
+
+/* Steps */
+.steps-box {
+    margin: 2rem 0;
+}
+
+.step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.step h3 {
+    color: #764ba2;
+    margin-bottom: 0.5rem;
+}
+
+/* Call to Action */
+.call-to-action {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.call-to-action p {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.reminder {
+    font-size: 2.2rem !important;
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.checklist {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.checklist h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.checklist ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.checklist li {
+    font-size: 1.4rem;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+.objectives-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.objectives-list li {
+    background: white;
+    padding: 1rem;
+    margin: 0.8rem 0;
+    border-radius: 8px;
+    border-left: 5px solid #667eea;
+}
+
+/* Teacher Notes */
+.teacher-notes {
+    background: #fff9e6;
+    padding: 1.5rem 3rem;
+    border-top: 3px solid #ffc107;
+    min-height: 120px;
+}
+
+.teacher-notes h3 {
+    color: #f57c00;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.teacher-notes p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Slide Navigation */
+.slide-nav {
+    background: #667eea;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide-number {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #764ba2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide-content {
+        padding: 2rem 3rem;
+    }
+    
+    .slide-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .variables-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 1.5rem 2rem;
+    }
+    
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .slide-content p,
+    .slide-content ul,
+    .slide-content ol {
+        font-size: 1.1rem;
+    }
+    
+    .teacher-notes,
+    .slide-nav {
+        padding: 1rem 2rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .slide {
+        page-break-after: always;
+        display: block !important;
+        position: relative;
+        height: auto;
+    }
+    
+    .teacher-notes {
+        page-break-inside: avoid;
+    }
+}

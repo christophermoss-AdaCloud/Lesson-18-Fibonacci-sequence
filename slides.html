@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Fun! - Teacher Slides</title>
+    <link rel="stylesheet" href="slides.css">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <section class="slide" id="slide-1">
+            <div class="slide-content">
+                <h1>Fibonacci Fun! 🤩</h1>
+                <h2>A Lesson on Sequences and Loops</h2>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Welcome students, take attendance. Explain that you are a cover teacher, and the task is clearly laid out and must be submitted to Google Classroom by the end of the hour. Set the pace: <strong>Fast and Fun!</strong></p>
+            </div>
+            <div class="slide-nav">
+                <span class="slide-number">Slide 1 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 2: Objectives -->
+        <section class="slide" id="slide-2">
+            <div class="slide-content">
+                <h1>Objectives</h1>
+                <h2>By the end of this hour, you will be able to:</h2>
+                <ul class="objectives-list">
+                    <li>✓ Understand what a Fibonacci sequence is.</li>
+                    <li>✓ Identify the key components of a Python while loop.</li>
+                    <li>✓ Explain the role of variables and reassignment in the code.</li>
+                    <li>✓ Modify and submit a working Python program.</li>
+                </ul>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Read objectives and stress the importance of submission via Google Classroom.</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 2 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 3: The Big Question -->
+        <section class="slide" id="slide-3">
+            <div class="slide-content">
+                <h1>The Big Question</h1>
+                <h2>What is the Fibonacci Sequence? 🤔</h2>
+                <div class="content-box">
+                    <p>• It's a series of numbers where the next number is found by <strong>adding up the two numbers before it</strong>.</p>
+                    <p>• It usually starts with 0 and 1.</p>
+                </div>
+                <div class="sequence-display">
+                    <h3>Sequence:</h3>
+                    <p class="big-sequence">0, 1, 1, 2, 3, 5, 8, 13, 21, …</p>
+                </div>
+                <div class="formula-box">
+                    <p><strong>The Rule:</strong></p>
+                    <p class="formula">n<sub>current</sub> = n<sub>prev1</sub> + n<sub>prev2</sub></p>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Ask students if they've seen this pattern in nature (e.g., spirals on a pineapple, seed patterns on a sunflower). <strong>It's everywhere!</strong> Emphasize the rule: n<sub>current</sub> = n<sub>prev1</sub> + n<sub>prev2</sub></p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 3 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 4: Code Breakdown - The Goal -->
+        <section class="slide" id="slide-4">
+            <div class="slide-content">
+                <h1>Code Breakdown: The Goal</h1>
+                <h2>Our Goal: Print the sequence!</h2>
+                <div class="content-box">
+                    <p>We need a program that starts at <strong>0 and 1</strong>, and keeps generating the next number until it hits a certain count.</p>
+                </div>
+                <div class="example-box">
+                    <p>Example: If we want 10 numbers, the program should print:</p>
+                    <p class="code-output">0, 1, 1, 2, 3, 5, 8, 13, 21, 34</p>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Introduce the provided code. Tell them they will be working with this code.</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 4 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 5: Code Breakdown - Variables -->
+        <section class="slide" id="slide-5">
+            <div class="slide-content">
+                <h1>Code Breakdown: Variables</h1>
+                <h2>The Key Players (Variables):</h2>
+                <div class="variables-grid">
+                    <div class="var-card">
+                        <h3>nterms</h3>
+                        <p>The goal (how many numbers to print)</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>n1 <span class="small">(starts at 0)</span></h3>
+                        <p>The first number</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>n2 <span class="small">(starts at 1)</span></h3>
+                        <p>The second number</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>count</h3>
+                        <p>Our tracker (how many numbers printed so far)</p>
+                    </div>
+                </div>
+                <div class="important-box">
+                    <p><strong>The starting line:</strong> <code>count = 0</code></p>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Set up the concept of variables holding values. Use a simple analogy (e.g., a label on a storage box).</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 5 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 6: Code Breakdown - The while Loop -->
+        <section class="slide" id="slide-6">
+            <div class="slide-content">
+                <h1>Code Breakdown: The while Loop</h1>
+                <h2>The Engine (The while Loop):</h2>
+                <div class="code-example">
+                    <pre><code>while count &lt; nterms:
+    # ... code runs here ...
+    count += 1  # IMPORTANT: moves us closer to the goal</code></pre>
+                </div>
+                <div class="explanation-box">
+                    <p>• A <strong>while loop</strong> repeats a block of code as long as the condition (<code>count &lt; nterms</code>) is <strong>TRUE</strong>.</p>
+                    <p>• When <code>count</code> reaches <code>nterms</code>, the loop stops.</p>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Explain that this is what keeps the process going. If we forget <code>count += 1</code>, the loop runs forever! (An infinite loop - a bad thing!)</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 6 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 7: Code Breakdown - The Magic -->
+        <section class="slide" id="slide-7">
+            <div class="slide-content">
+                <h1>Code Breakdown: The Magic!</h1>
+                <h2>Generating the Next Number:</h2>
+                <div class="code-example">
+                    <pre><code>nth = n1 + n2
+n1 = n2
+n2 = nth</code></pre>
+                </div>
+                <div class="steps-box">
+                    <div class="step">
+                        <h3>Step 1: Calculate the Next Term (nth)</h3>
+                        <p>Add the two previous numbers together</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 2: Shift 1 - The old n2 becomes the new n1</h3>
+                        <p>Move the second number to the first position</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 3: Shift 2 - The new nth becomes the new n2</h3>
+                        <p>Move the new number to the second position</p>
+                    </div>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p><strong>This is the most important slide.</strong> Use your hands to demonstrate the 'shift' of the two previous numbers.</p>
+                <p><strong>Example:</strong> Start: n1=3, n2=5. → 1. nth is 8. → 2. n1 becomes 5. → 3. n2 becomes 8.</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 7 of 8</span>
+                <button class="nav-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </section>
+
+        <!-- Slide 8: Transition -->
+        <section class="slide" id="slide-8">
+            <div class="slide-content">
+                <h1>Time to Code! 🚀</h1>
+                <div class="call-to-action">
+                    <p>Open the provided Python file on your desktop and get ready to complete the worksheet tasks.</p>
+                    <p class="reminder"><strong>Remember to submit to Google Classroom!</strong></p>
+                </div>
+                <div class="checklist">
+                    <h3>Your Checklist:</h3>
+                    <ul>
+                        <li>☐ Open the Python file</li>
+                        <li>☐ Complete the TODO sections</li>
+                        <li>☐ Test your code</li>
+                        <li>☐ Submit to Google Classroom</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="teacher-notes">
+                <h3>📝 Notes for Cover Teacher:</h3>
+                <p>Transition to the practical task. Ensure students have access to the file and a Python environment (IDE/online compiler).</p>
+            </div>
+            <div class="slide-nav">
+                <button class="nav-btn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-number">Slide 8 of 8</span>
+                <button class="nav-btn" onclick="location.href='index.html'">Go to Full Lesson →</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="slides.js"></script>
+</body>
+</html>
