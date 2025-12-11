@@ -9,7 +9,7 @@ This lesson introduces students to the Fibonacci sequence, a fundamental concept
 ## 🎯 Target Audience
 
 - **Age Group**: 16-17 years old
-- **Course**: FE Foundation - Unit 14: Software Development
+- **Course**: FE Foundation - Unit 12: Software Development
 - **Level**: Beginner to Intermediate
 
 ## 📁 Repository Contents
