@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: Fibonacci Sequence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lesson 18: Fibonacci Sequence</h1>
+        <p class="subtitle">Unit 12: Software Development - FE Foundation Course</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="slides.html" style="color: white; text-decoration: none; padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 0 0.5rem; display: inline-block;">📊 Teacher Slides</a>
+            <a href="worksheet.html" style="color: white; text-decoration: none; padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 0 0.5rem; display: inline-block;">📝 Student Worksheet</a>
+            <a href="Python_lessons_Fibonacci_Sequence to the Nth.py" download style="color: white; text-decoration: none; padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 0 0.5rem; display: inline-block;">🐍 Download Python File</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Introduction</h2>
+            <p>Welcome to Lesson 18! Today we'll explore one of the most fascinating patterns in mathematics and nature: the <strong>Fibonacci sequence</strong>.</p>
+            <p>The Fibonacci sequence appears in many places, from the spirals of shells to the arrangement of leaves on plants, and even in financial markets!</p>
+        </section>
+
+        <section class="concept">
+            <h2>What is the Fibonacci Sequence?</h2>
+            <p>The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. It starts with 0 and 1:</p>
+            <div class="sequence-box">
+                <code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...</code>
+            </div>
+            <p>The pattern follows this rule:</p>
+            <ul>
+                <li>F(0) = 0</li>
+                <li>F(1) = 1</li>
+                <li>F(n) = F(n-1) + F(n-2) for n > 1</li>
+            </ul>
+            
+            <h3>Example:</h3>
+            <ul>
+                <li>F(2) = F(1) + F(0) = 1 + 0 = <strong>1</strong></li>
+                <li>F(3) = F(2) + F(1) = 1 + 1 = <strong>2</strong></li>
+                <li>F(4) = F(3) + F(2) = 2 + 1 = <strong>3</strong></li>
+                <li>F(5) = F(4) + F(3) = 3 + 2 = <strong>5</strong></li>
+            </ul>
+        </section>
+
+        <section class="real-world">
+            <h2>Real-World Applications</h2>
+            <div class="applications">
+                <div class="app-card">
+                    <h3>🌻 Nature</h3>
+                    <p>Flower petals, pinecones, and sunflower seed arrangements often follow Fibonacci numbers.</p>
+                </div>
+                <div class="app-card">
+                    <h3>🎨 Art & Design</h3>
+                    <p>The "Golden Ratio" derived from Fibonacci numbers is used in art, architecture, and design.</p>
+                </div>
+                <div class="app-card">
+                    <h3>💻 Computer Science</h3>
+                    <p>Used in algorithms, data structures, and computational problem-solving.</p>
+                </div>
+                <div class="app-card">
+                    <h3>📈 Finance</h3>
+                    <p>Technical analysts use Fibonacci retracement levels in trading strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="objectives">
+            <h2>Learning Objectives</h2>
+            <p>By the end of this lesson, you will be able to:</p>
+            <ul>
+                <li>Understand the mathematical concept of the Fibonacci sequence</li>
+                <li>Implement a Python function to calculate Fibonacci numbers</li>
+                <li>Use loops and conditional statements effectively</li>
+                <li>Practice debugging and testing your code</li>
+                <li>Understand the difference between iterative and recursive approaches</li>
+            </ul>
+        </section>
+
+        <section class="task">
+            <h2>Your Task</h2>
+            <p>You've been provided with a Python script called <code>fibonacci.py</code> that contains incomplete functions. Your job is to:</p>
+            <ol>
+                <li>Download the <code>fibonacci.py</code> file</li>
+                <li>Complete the missing code sections marked with <code># TODO</code> comments</li>
+                <li>Test your implementation with the provided test cases</li>
+                <li>Make sure all tests pass before submitting</li>
+            </ol>
+            
+            <div class="download-box">
+                <a href="fibonacci.py" class="download-btn" download>📥 Download fibonacci.py</a>
+            </div>
+
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Implement the <code>fibonacci_iterative(n)</code> function using a loop</li>
+                <li>Implement the <code>fibonacci_recursive(n)</code> function using recursion</li>
+                <li>Implement the <code>fibonacci_sequence(n)</code> function to generate the first n Fibonacci numbers</li>
+                <li>All functions should handle edge cases (n = 0, n = 1, negative numbers)</li>
+            </ul>
+
+            <h3>Testing Your Code:</h3>
+            <p>Run your script using Python 3:</p>
+            <div class="code-box">
+                <code>python fibonacci.py</code>
+            </div>
+            <p>If all tests pass, you'll see a success message. If any fail, debug and fix your code!</p>
+        </section>
+
+        <section class="tips">
+            <h2>Tips & Hints</h2>
+            <div class="tip-box">
+                <p><strong>💡 Tip 1:</strong> Start with the iterative approach - it's usually easier to understand than recursion.</p>
+            </div>
+            <div class="tip-box">
+                <p><strong>💡 Tip 2:</strong> Remember, you need to keep track of the previous two numbers to calculate the next one.</p>
+            </div>
+            <div class="tip-box">
+                <p><strong>💡 Tip 3:</strong> For recursion, think about the base cases: what should happen when n is 0 or 1?</p>
+            </div>
+            <div class="tip-box">
+                <p><strong>💡 Tip 4:</strong> Test your functions with small numbers first (0, 1, 2, 3) before trying larger values.</p>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html" target="_blank">Math is Fun: Fibonacci Sequence</a></li>
+                <li><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" target="_blank">Python Functions Tutorial</a></li>
+                <li><a href="https://realpython.com/fibonacci-sequence-python/" target="_blank">Real Python: Fibonacci Sequence Guide</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 FE Foundation Course | Unit 12: Software Development</p>
+    </footer>
+</body>
+</html>

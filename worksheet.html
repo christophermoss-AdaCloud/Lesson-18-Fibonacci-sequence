@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Worksheet - Student Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .worksheet-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .submission-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        .submission-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .task-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+        }
+        .task-section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .question {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #764ba2;
+        }
+        .answer-line {
+            border-bottom: 2px dotted #667eea;
+            display: inline-block;
+            min-width: 300px;
+            margin: 0.5rem 0;
+        }
+        .challenge-box {
+            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+        .challenge-box h4 {
+            color: #764ba2;
+            margin-top: 0;
+        }
+        .code-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .code-table th,
+        .code-table td {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: left;
+        }
+        .code-table th {
+            background: #667eea;
+            color: white;
+        }
+        .code-table code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+        }
+        .time-indicator {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        .bonus-task {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        .print-btn {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+        .print-btn:hover {
+            background: #764ba2;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet-header no-print">
+        <h1>📝 Practical Worksheet: Fibonacci Code Challenge</h1>
+        <p>Lesson 18 - Unit 12: Software Development</p>
+        <button class="print-btn" onclick="window.print()">🖨️ Print Worksheet</button>
+    </div>
+
+    <main style="max-width: 1000px; margin: 2rem auto; padding: 2rem; background: white;">
+        
+        <div class="submission-box">
+            <h3>⚠️ SUBMISSION INSTRUCTIONS (READ CAREFULLY!)</h3>
+            <ol>
+                <li>Complete the tasks below using the provided Python file (<code>Python_lessons_Fibonacci_Sequence to the Nth.py</code>).</li>
+                <li>Save your completed file as: <strong><code>YourName_Fibonacci_Challenge.py</code></strong> (e.g., <code>JoeBloggs_Fibonacci_Challenge.py</code>).</li>
+                <li>Upload your finished Python file to <strong>Google Classroom</strong> before the end of the lesson.</li>
+            </ol>
+        </div>
+
+        <!-- Task 1 -->
+        <div class="task-section">
+            <h2>Task 1: Code Review and Predict <span class="time-indicator">⏱️ 5 minutes</span></h2>
+            <p>Before running the code, answer these questions based on the slides:</p>
+            
+            <div class="question">
+                <p><strong>1. What is the purpose of the variable <code>nterms</code> in the code?</strong></p>
+                <p>Answer: <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+
+            <div class="question">
+                <p><strong>2. If <code>n1 = 5</code> and <code>n2 = 8</code>, what will the value of <code>nth</code> be in the next loop iteration?</strong></p>
+                <p>Answer: <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+
+            <div class="question">
+                <p><strong>3. Why is the line <code>count += 1</code> essential for the program to work correctly? (What happens if you remove it?)</strong></p>
+                <p>Answer: <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                <p><span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="task-section">
+            <h2>Task 2: Code Modification – The Fun Challenge <span class="time-indicator">⏱️ 20 minutes</span></h2>
+            
+            <div class="challenge-box">
+                <h4>A. Print the sequence (Run 1):</h4>
+                <ol>
+                    <li>Open the file and <strong>RUN</strong> the code as it is.</li>
+                    <li>What is the last number printed when <code>nterms</code> is set to <code>10</code>?</li>
+                </ol>
+                <p>Answer: <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+
+            <div class="challenge-box">
+                <h4>B. Challenge 1: Find the 20th Term (Modify and Run 2):</h4>
+                <ol>
+                    <li>Find the line <code>nterms = 100</code> and change it to <strong><code>nterms = 20</code></strong>.</li>
+                    <li>Run the code again.</li>
+                    <li>What is the final number printed in the 20-term sequence?</li>
+                </ol>
+                <p>Answer: <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+
+            <div class="challenge-box">
+                <h4>C. Challenge 2: Start with different numbers (Modify and Run 3):</h4>
+                <p>The sequence usually starts with 0 and 1. We are going to change the start!</p>
+                <ol>
+                    <li>Find the lines <code>n1 = 0</code> and <code>n2 = 1</code>.</li>
+                    <li>Change them so that the sequence starts with <strong><code>n1 = 5</code></strong> and <strong><code>n2 = 10</code></strong>.</li>
+                    <li>Keep <code>nterms = 20</code>.</li>
+                    <li>Run the code. What are the first five numbers in your <strong>new</strong> sequence?</li>
+                </ol>
+                <p>Answer: 5, 10, <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, <span class="answer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="task-section">
+            <h2>Task 3: Commenting and Explanation <span class="time-indicator">⏱️ 15 minutes</span></h2>
+            <p>Good programmers explain their code. Use Python comments (<code>#</code>) to add explanations to the lines listed below in your Python file.</p>
+            
+            <table class="code-table">
+                <thead>
+                    <tr>
+                        <th>Line Number (approx.)</th>
+                        <th>The Line of Code</th>
+                        <th>Your Comment Explanation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>~12</strong></td>
+                        <td><code>n1 = 0</code></td>
+                        <td><code># Sets the first number of the sequence.</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>~22</strong></td>
+                        <td><code>while count < nterms:</code></td>
+                        <td><strong>Your Comment Here:</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>~24</strong></td>
+                        <td><code>print(n1, end=' , ')</code></td>
+                        <td><strong>Your Comment Here:</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>~25</strong></td>
+                        <td><code>nth = n1 + n2</code></td>
+                        <td><strong>Your Comment Here:</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>~27</strong></td>
+                        <td><code>n1 = n2</code></td>
+                        <td><strong>Your Comment Here:</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>~29</strong></td>
+                        <td><code>count += 1</code></td>
+                        <td><strong>Your Comment Here:</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="task-section">
+            <h2>Task 4: Final Submission Check <span class="time-indicator">⏱️ 5 minutes</span></h2>
+            <div class="question">
+                <ol style="font-size: 1.2rem;">
+                    <li><strong>SAVE</strong> your Python file as <code>YourName_Fibonacci_Challenge.py</code>.</li>
+                    <li><strong>UPLOAD</strong> the file to Google Classroom now!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Bonus Task -->
+        <div class="bonus-task">
+            <h3>🌟 Bonus Challenge (If you finish early):</h3>
+            <p><strong>Need more time?</strong> If you finish all tasks, try to find a way to make the program stop printing once the numbers get larger than 1000.</p>
+            <p><strong>Hint:</strong> Look up how to use the <code>break</code> keyword or change the <code>while</code> condition!</p>
+        </div>
+
+        <div class="no-print" style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
+            <h3>📚 Additional Resources</h3>
+            <p><a href="index.html">View Full Lesson</a> | <a href="slides.html">View Presentation Slides</a> | <a href="Python_lessons_Fibonacci_Sequence to the Nth.py" download>Download Python File</a></p>
+        </div>
+    </main>
+
+    <footer class="no-print" style="text-align: center; color: white; padding: 2rem;">
+        <p>&copy; 2025 FE Foundation Course | Unit 12: Software Development</p>
+    </footer>
+</body>
+</html>
