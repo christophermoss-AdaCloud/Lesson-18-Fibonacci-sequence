@@ -1,6 +1,6 @@
 """
 Lesson 18: Fibonacci Sequence
-Unit 14: Software Development - FE Foundation Course
+Unit 12: Software Development - FE Foundation Course
 
 Your task is to complete the missing functions below.
 Read the instructions carefully and fill in the TODO sections.

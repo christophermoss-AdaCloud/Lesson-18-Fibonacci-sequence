@@ -1,6 +1,6 @@
 """
 Lesson 18: Fibonacci Sequence - While Loop Implementation
-Unit 14: Software Development - FE Foundation Course
+Unit 12: Software Development - FE Foundation Course
 
 This program prints the Fibonacci sequence up to nterms numbers.
 
