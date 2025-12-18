@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The "Christmas Around the World" Quizvent Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --gold: #fbbf24;
+            --gold-glow: #f59e0b;
+            --text-white: #f8fafc;
+            --red: #ef4444;
+            --card-border: rgba(251, 191, 36, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(239, 68, 68, 0.08) 0%, transparent 25%),
+                linear-gradient(to bottom, #0f172a, #1e1b4b);
+            color: var(--text-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        /* Snow effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+            animation: snow 10s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes snow {
+            from { background-position: 0 0; }
+            to { background-position: 0 200px; }
+        }
+
+        h1 {
+            font-family: 'Mountains of Christmas', cursive;
+            color: var(--gold);
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid Layout */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Card Styles */
+        .day-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            min-height: 180px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.5;
+        }
+
+        .day-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 0 15px rgba(251, 191, 36, 0.2);
+            border-color: var(--gold);
+            background-color: rgba(30, 41, 59, 0.9);
+        }
+
+        .day-number {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .day-question {
+            font-size: 0.85em;
+            line-height: 1.5;
+            flex-grow: 1;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+
+        .country-tag {
+            font-size: 0.7em;
+            color: var(--red);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .country-tag::before {
+            content: '★';
+            color: var(--gold);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: var(--text-white);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.15);
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            background-color: #1e293b;
+        }
+
+        .modal-answer {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .modal-note {
+            font-size: 1.1em;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        #modal-day {
+            color: var(--text-white);
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: linear-gradient(to right, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3);
+        }
+
+        .close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5em; }
+            .day-number { font-size: 2.5em; }
+            .modal-content { padding: 25px; }
+            .calendar-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quizvent Calendar</h1>
+    <div class="subtitle">Open a door daily for a holiday fact & a festive surprise!</div>
+
+    <div class="calendar-grid" id="calendar">
+        <!-- Cards will be injected here by JS -->
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <h2 id="modal-day">Day X</h2>
+            <img src="" alt="Funny Holiday Surprise" class="modal-image" id="modal-img" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/fbbf24?text=Festive+Surprise';">
+            <div class="modal-answer" id="modal-answer">Answer Here</div>
+            <div class="modal-note" id="modal-country"></div>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Updated Answer Key Data
+        const quizData = [
+            { day: 1, country: "Japan", question: "Which famous fast-food restaurant is so popular for Christmas dinner that people order their fried chicken weeks in advance?", answer: "KFC" },
+            { day: 2, country: "Germany", question: "What is the name of the scary, goat-like monster who follows St. Nicholas to punish naughty children?", answer: "Krampus" },
+            { day: 3, country: "Mexico", question: "In the city of Oaxaca, people celebrate a festival by carving elaborate scenes out of which red-and-white vegetable?", answer: "Radishes" },
+            { day: 4, country: "Norway", question: "On Christmas Eve, why do people hide all the brooms in their house?", answer: "To stop witches from stealing them" },
+            { day: 5, country: "Australia", question: "Since Christmas happens in the middle of a hot summer, what outdoor location is the most popular place for a family lunch?", answer: "The Beach" },
+            { day: 6, country: "Ukraine", question: "Instead of standard tinsel, many people decorate their trees with decorations that look like spider webs for good luck. True or False?", answer: "True" },
+            { day: 7, country: "Italy", question: "Who is the friendly 'Christmas Witch' who flies on a broomstick and delivers candy to children in January?", answer: "La Befana" },
+            { day: 8, country: "Sweden", question: "In the town of Gävle, the locals build a giant version of what animal made out of straw every year?", answer: "A Goat" },
+            { day: 9, country: "Philippines", question: "What is a Parol—the most popular decoration in the country? (Hint: It's a shape you see in the sky).", answer: "A Star-shaped lantern" },
+            { day: 10, country: "The Netherlands", question: "Instead of a sleigh pulled by reindeer, Sinterklaas (Santa) arrives in the country on what kind of boat?", answer: "A Steamboat" },
+            { day: 11, country: "Spain", question: "In the region of Catalonia, children hit a 'Christmas Log' with sticks to make it 'poop' out what kind of treats?", answer: "Candy/Sweets" },
+            { day: 12, country: "France", question: "What is the name of the delicious sponge cake that is decorated to look like a real wooden log?", answer: "Bûche de Noël (Yule Log)" },
+            { day: 13, country: "United Kingdom", question: "What shiny object is often hidden inside a Christmas pudding to bring luck to the person who finds it?", answer: "A Silver Coin" },
+            { day: 14, country: "Iceland", question: "How many 'Yule Lads' (mischievous Santa-like characters) visit children in the days leading up to Christmas?", answer: "13" },
+            { day: 15, country: "USA (Southwest)", question: "What are the paper bags filled with sand and a candle called that light up the sidewalks on Christmas Eve?", answer: "Luminarias" },
+            { day: 16, country: "Poland", question: "Families wait for the 'First Star' to appear in the sky before they start their 12-course Christmas Eve dinner. True or False?", answer: "True" },
+            { day: 17, country: "Venezuela", question: "In the city of Caracas, many people travel to early morning church services using what fun, wheeled footwear?", answer: "Roller Skates" },
+            { day: 18, country: "Finland", question: "Almost every family in this country visits what hot, steamy room on Christmas Eve to relax?", answer: "A Sauna" },
+            { day: 19, country: "Greenland", question: "One traditional holiday 'treat' is Mattak. Is this made from whale skin or frozen chocolate?", answer: "Whale skin" },
+            { day: 20, country: "Greece", question: "Before Christmas trees became popular, what did Greek people traditionally decorate with lights instead?", answer: "Boats" },
+            { day: 21, country: "Ireland", question: "On 'Women's Christmas' (January 6th), the men stay home to do all the chores while the women do what?", answer: "Go out and celebrate/relax" },
+            { day: 22, country: "Canada", question: "What is the special postal code (using letters and numbers) that children use to mail letters to Santa at the North Pole?", answer: "H0H 0H0" },
+            { day: 23, country: "Ethiopia", question: "Because they follow a different calendar, do they celebrate Christmas on December 25th or January 7th?", answer: "January 7th" },
+            { day: 24, country: "Wales", question: "A strange tradition called the Mari Lwyd involves someone carrying around a pole with the real skull of what animal on it?", answer: "A Horse" },
+            { day: 25, country: "USA", question: "Jingle Bells was originally written for Thanksgiving, not Christmas. True or False?", answer: "True" }
+        ];
+
+        const calendarContainer = document.getElementById('calendar');
+        const modal = document.getElementById('modal');
+        const modalDay = document.getElementById('modal-day');
+        const modalImg = document.getElementById('modal-img');
+        const modalAnswer = document.getElementById('modal-answer');
+        const modalCountry = document.getElementById('modal-country');
+
+        // Initialize Calendar
+        quizData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'day-card';
+            // Add slight staggered animation delay for a nice load effect
+            card.style.animationDelay = `${index * 0.05}s`;
+            
+            card.innerHTML = `
+                <div class="country-tag">${item.country}</div>
+                <div class="day-number">${item.day}</div>
+                <div class="day-question">${item.question}</div>
+            `;
+            card.onclick = () => openModal(item);
+            calendarContainer.appendChild(card);
+        });
+
+        function openModal(item) {
+            modalDay.innerText = "Day " + item.day;
+            modalAnswer.innerText = item.answer;
+            modalCountry.innerText = "Tradition from: " + item.country;
+            
+            // Using Unsplash API to get funny elf images
+            // We use the item.day as a seed to ensure consistent images per day
+            modalImg.src = `https://source.unsplash.com/400x300/?elf,funny,christmas&sig=${item.day}`;
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            // Clear src to prevent old image from showing briefly next time
+            setTimeout(() => { modalImg.src = ''; }, 300);
+        }
+
+        // Close modal if clicking outside the content
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Allow Escape key to close modal
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
