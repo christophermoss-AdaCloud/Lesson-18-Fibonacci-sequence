@@ -276,7 +276,7 @@
     <div class="modal-overlay" id="modal">
         <div class="modal-content">
             <h2 id="modal-day">Day X</h2>
-            <img src="" alt="Funny Holiday Surprise" class="modal-image" id="modal-img" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/fbbf24?text=Festive+Surprise';">
+            <img src="" alt="Funny Holiday Surprise" class="modal-image" id="modal-img">
             <div class="modal-answer" id="modal-answer">Answer Here</div>
             <div class="modal-note" id="modal-country"></div>
             <button class="close-btn" onclick="closeModal()">Close</button>
@@ -320,12 +320,16 @@
         const modalAnswer = document.getElementById('modal-answer');
         const modalCountry = document.getElementById('modal-country');
 
+        // Add error handler for image loading
+        modalImg.onerror = function() {
+            this.onerror = null;
+            this.src = 'https://placehold.co/400x300/1e293b/fbbf24?text=Festive+Surprise';
+        };
+
         // Initialize Calendar
         quizData.forEach((item, index) => {
             const card = document.createElement('div');
             card.className = 'day-card';
-            // Add slight staggered animation delay for a nice load effect
-            card.style.animationDelay = `${index * 0.05}s`;
             
             card.innerHTML = `
                 <div class="country-tag">${item.country}</div>
